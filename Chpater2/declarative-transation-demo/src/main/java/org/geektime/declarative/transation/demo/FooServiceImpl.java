@@ -1,5 +1,6 @@
 package org.geektime.declarative.transation.demo;
 
+import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
@@ -30,6 +31,14 @@ public class FooServiceImpl implements FooService{
 
     @Override
     public void invokeInsertThenRollback() {
+        // 如果想让事务生效
+        /**1.
+         * @Autowired
+         * private FooService fooService;
+         * fooService.invokeThenRollback();
+         *
+         * 2. (FooService)AopContext.currentProxy().invokeThenRollback()
+         */
         insertThenRollback();
     }
 }
