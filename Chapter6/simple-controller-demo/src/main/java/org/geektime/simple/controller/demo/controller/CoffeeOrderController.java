@@ -31,7 +31,7 @@ public class CoffeeOrderController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public CoffeeOrder createOrder(@RequestBody NewRequest newRequest){
-        log.info("Receive new order");
+        log.info("Receive new order.");
         Coffee[] coffees = coffeeService.findCoffeeByName(newRequest.getItems()).toArray(new Coffee[]{});
         return orderService.createOrder(newRequest.getCustomer(), coffees);
     }
