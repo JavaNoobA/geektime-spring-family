@@ -55,6 +55,11 @@ public class CoffeeController {
         return coffeeService.addCoffee(coffeeRequest.getName(), coffeeRequest.getPrice());
     }
 
+    /***
+     * 根据上传的文件 解析对应的 coffee 数据
+     * @param file 上传的文件
+     * @return
+     */
     @PostMapping(path = "/", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public List<Coffee> batchAdd(@RequestParam("file")MultipartFile file){
         List<Coffee> coffees = new ArrayList<>();
