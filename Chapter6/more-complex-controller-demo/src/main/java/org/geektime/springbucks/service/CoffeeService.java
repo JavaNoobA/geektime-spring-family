@@ -35,6 +35,6 @@ public class CoffeeService {
     }
 
     public List<Coffee> getCoffeeByNames(List<String> names){
-        return coffeeRepository.findByNameOrderById(names);
+        return coffeeRepository.findByNameInOrderById(names);
     }
 }

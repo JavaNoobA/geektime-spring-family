@@ -10,6 +10,6 @@ import java.util.List;
  * @date 2020/7/30 15:35
  */
 public interface CoffeeRepository extends JpaRepository<Coffee, Long> {
-    List<Coffee> findByNameOrderById(List<String> names);
+    List<Coffee> findByNameInOrderById(List<String> list);
     Coffee findByName(String name);
 }
